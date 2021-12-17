@@ -46,6 +46,7 @@ def load_words():
         wordlist.append(line.strip().lower())
 
     print("  ", len(wordlist), "words loaded.")
+    print("-" * 28)
     return wordlist
 
 
@@ -102,6 +103,8 @@ def get_word_score(word, n):
 #
 # Make sure you understand how this function works and what it does!
 #
+
+
 def display_hand(hand):
     """
     Displays the letters currently in the hand.
@@ -123,6 +126,8 @@ def display_hand(hand):
 # Make sure you understand how this function works and what it does!
 # You will need to modify this for Problem #4.
 #
+
+
 def deal_hand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -152,6 +157,8 @@ def deal_hand(n):
 #
 # Problem #2: Update a hand by removing letters
 #
+
+
 def update_hand(hand, word):
     """
     Does NOT assume that hand contains every letter in word at least as
@@ -181,6 +188,8 @@ def update_hand(hand, word):
 #
 # Problem #3: Test word validity
 #
+
+
 def is_valid_word(word, hand, word_list):
     """
     Returns True if word is in the word_list and is entirely
@@ -214,11 +223,11 @@ def is_valid_word(word, hand, word_list):
         return True
 
         
-
-
 #
 # Problem #5: Playing a hand
 #
+
+
 def calculate_handlen(hand):
     """ 
     Returns the length (number of letters) in the current hand.
@@ -261,6 +270,7 @@ def play_hand(hand, word_list):
         print(f"\nCurrent Hand:")
         display_hand(hand)
         # Ask user for input
+	print("-" * 53)
         word = input("Enter word, or “!!” to indicate that you are finished: ")
         # If the input is two exclamation points:
         if word == '!!':
@@ -285,6 +295,7 @@ def play_hand(hand, word_list):
     # Game is over (user entered '!!' or ran out of letters),
     # so tell user the total score
     print(f'Total score for this hand: {total_points}')
+    print("-" * 53)
     # Return the total score as result of function
     return total_points
     
@@ -297,6 +308,7 @@ def play_hand(hand, word_list):
 #
 # procedure you will use to substitute a letter in a hand
 #
+
 
 def substitute_hand(hand, letter):
     """ 
@@ -392,6 +404,8 @@ def play_game(word_list):
 # Do not remove the "if __name__ == '__main__':" line - this code is executed
 # when the program is run directly, instead of through an import statement
 #
+
+
 if __name__ == '__main__':
     word_list = load_words()
     play_game(word_list)
